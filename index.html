@@ -4,17 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
     <meta name="theme-color" content="#1a1a1a">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>PISOA Study - Segurança Operacional</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
         }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background: #f5f5f0;
@@ -22,12 +18,10 @@
             transition: background 0.3s, color 0.3s;
             min-height: 100vh;
         }
-
         body.dark {
             background: #121212;
             color: #e0e0e0;
         }
-
         .container {
             max-width: 600px;
             width: 100%;
@@ -35,8 +29,6 @@
             padding: 16px;
             min-height: 100vh;
         }
-
-        /* Header */
         .header {
             display: flex;
             justify-content: space-between;
@@ -44,23 +36,18 @@
             margin-bottom: 32px;
             padding-top: 8px;
         }
-
         .logo h1 {
             font-size: 1.6rem;
             font-weight: 600;
-            letter-spacing: -0.5px;
         }
-
         .logo p {
             font-size: 0.7rem;
             color: #666;
             margin-top: 4px;
         }
-
         body.dark .logo p {
             color: #aaa;
         }
-
         .theme-toggle {
             background: none;
             border: none;
@@ -68,14 +55,7 @@
             cursor: pointer;
             padding: 8px;
             border-radius: 50%;
-            transition: background 0.2s;
         }
-
-        .theme-toggle:active {
-            background: rgba(0,0,0,0.1);
-        }
-
-        /* Botões principais */
         .btn {
             width: 100%;
             padding: 16px 24px;
@@ -85,42 +65,29 @@
             font-size: 1.05rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.2s ease;
             background: #1a1a1a;
             color: white;
         }
-
         body.dark .btn {
             background: #2a2a2a;
         }
-
-        .btn:active {
-            transform: scale(0.97);
-        }
-
         .btn-secondary {
             background: transparent;
             border: 1.5px solid #1a1a1a;
             color: #1a1a1a;
         }
-
         body.dark .btn-secondary {
             border-color: #e0e0e0;
             color: #e0e0e0;
         }
-
-        /* Telas */
         .home-screen, .quiz-screen, .result-screen, .subjects-screen {
             display: none;
         }
-
         .home-screen {
             flex-direction: column;
             justify-content: center;
             min-height: 60vh;
         }
-
-        /* Quiz header */
         .quiz-header {
             display: flex;
             justify-content: space-between;
@@ -128,11 +95,9 @@
             padding-bottom: 12px;
             border-bottom: 1px solid #ddd;
         }
-
         body.dark .quiz-header {
             border-bottom-color: #333;
         }
-
         .progress {
             font-size: 0.8rem;
             color: #666;
@@ -140,21 +105,16 @@
             padding: 4px 12px;
             border-radius: 20px;
         }
-
         body.dark .progress {
             background: #2a2a2a;
             color: #aaa;
         }
-
-        /* Pergunta */
         .question-text {
             font-size: 1.2rem;
             line-height: 1.4;
             margin-bottom: 24px;
             font-weight: 500;
         }
-
-        /* Opções */
         .option {
             background: white;
             border: 1px solid #ddd;
@@ -164,70 +124,51 @@
             cursor: pointer;
             transition: all 0.2s;
             font-size: 0.95rem;
-            line-height: 1.3;
         }
-
         body.dark .option {
             background: #1e1e1e;
             border-color: #333;
         }
-
-        .option:active {
-            transform: scale(0.98);
-        }
-
         .option.correct {
             border-color: #2e7d32;
             background: #e8f5e9;
         }
-
         body.dark .option.correct {
             background: #1b3a1f;
             border-color: #4caf50;
         }
-
         .option.wrong {
             border-color: #c62828;
             background: #ffebee;
         }
-
         body.dark .option.wrong {
             background: #3a1a1a;
             border-color: #ef5350;
         }
-
-        /* Feedback */
         .feedback {
             margin: 20px 0;
             padding: 16px;
             border-radius: 14px;
             background: #f0f0f0;
         }
-
         body.dark .feedback {
             background: #1e1e1e;
         }
-
         .feedback-correct {
             color: #2e7d32;
             font-weight: 600;
             margin-bottom: 8px;
         }
-
         body.dark .feedback-correct {
             color: #81c784;
         }
-
         .feedback-explanation {
             color: #555;
             font-size: 0.85rem;
-            line-height: 1.4;
         }
-
         body.dark .feedback-explanation {
             color: #bbb;
         }
-
         .next-btn {
             width: 100%;
             padding: 14px;
@@ -240,40 +181,28 @@
             color: white;
             cursor: pointer;
         }
-
-        .next-btn:active {
-            transform: scale(0.98);
-        }
-
-        /* Resultado */
         .result-card {
             text-align: center;
             padding: 30px 16px;
         }
-
         .score {
             font-size: 3rem;
             font-weight: 700;
             margin: 20px 0;
         }
-
         .percentage {
             font-size: 1.2rem;
             color: #666;
         }
-
         .time-spent {
             margin: 20px 0;
             padding: 14px;
             background: #f0f0f0;
             border-radius: 14px;
         }
-
         body.dark .time-spent {
             background: #1e1e1e;
         }
-
-        /* Assuntos */
         .subject-btn {
             width: 100%;
             padding: 14px 16px;
@@ -283,20 +212,12 @@
             border: 1px solid #ddd;
             border-radius: 14px;
             cursor: pointer;
-            font-size: 0.95rem;
-            transition: all 0.2s;
         }
-
         body.dark .subject-btn {
             background: #1e1e1e;
             border-color: #333;
             color: #e0e0e0;
         }
-
-        .subject-btn:active {
-            transform: scale(0.98);
-        }
-
         .back-btn {
             background: none;
             border: none;
@@ -305,21 +226,15 @@
             margin-bottom: 20px;
             padding: 8px 0;
             color: #666;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
         }
-
         hr {
             margin: 20px 0;
             border: none;
             border-top: 1px solid #ddd;
         }
-
         body.dark hr {
             border-top-color: #333;
         }
-
         h3 {
             margin-bottom: 16px;
             font-weight: 500;
@@ -336,14 +251,12 @@
             <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
         </div>
 
-        <!-- Tela inicial -->
         <div id="homeScreen" class="home-screen">
             <button class="btn" onclick="startQuiz()">▶ Iniciar Quiz</button>
             <button class="btn btn-secondary" onclick="showSubjects()">📚 Estudar por Assunto</button>
             <button class="btn btn-secondary" onclick="showResultsHistory()">📊 Resultados</button>
         </div>
 
-        <!-- Tela de quiz -->
         <div id="quizScreen" class="quiz-screen">
             <div class="quiz-header">
                 <span class="progress" id="quizProgress">Questão 0/0</span>
@@ -356,14 +269,12 @@
             <button class="next-btn" id="finishBtn" onclick="finishQuiz()" style="display: none;">🏁 Finalizar</button>
         </div>
 
-        <!-- Tela de assuntos -->
         <div id="subjectsScreen" class="subjects-screen">
             <button class="back-btn" onclick="showHome()">← Voltar</button>
             <h3>📖 Escolha um tema</h3>
             <div id="subjectsList"></div>
         </div>
 
-        <!-- Tela de resultado -->
         <div id="resultScreen" class="quiz-screen">
             <button class="back-btn" onclick="showHome()">← Voltar</button>
             <div class="result-card">
@@ -381,86 +292,14 @@
     </div>
 
     <script>
-        // ==================== BANCO DE QUESTÕES - 78 QUESTÕES BASEADAS NO PDF PISOA ====================
         const questions = [
-            // ===== TREINAMENTOS OBRIGATÓRIOS =====
-            { text: "Quantos treinamentos obrigatórios são listados na Seção 153.37 do RBAC nº 153?", options: ["5", "7", "9", "11"], correct: 2, explanation: "A Seção 153.37 do RBAC nº 153 lista 9 treinamentos obrigatórios." },
-            { text: "Qual o objetivo principal do PISOA?", options: ["Cumprir exigência regulatória", "Estabelecer treinamentos para garantir segurança operacional", "Substituir o SGSO", "Treinar apenas bombeiros"], correct: 1, explanation: "O PISOA tem por finalidade estabelecer treinamentos para que as atividades ocorram com segurança operacional." },
-            { text: "Por quantos anos o operador deve manter a documentação do PISOA?", options: ["2 anos", "3 anos", "5 anos", "10 anos"], correct: 2, explanation: "Por força da Seção 153.39, a documentação deve ser mantida por pelo menos 5 anos." },
-            { text: "Qual o prazo máximo recomendado para treinamentos recorrentes?", options: ["12 meses", "18 meses", "24 meses", "36 meses"], correct: 2, explanation: "Recomenda-se intervalo máximo de 24 meses entre treinamentos recorrentes." },
-            { text: "O que significa SGSO?", options: ["Sistema de Gestão de Segurança Operacional", "Sistema Geral de Segurança Operacional", "Sistema de Gerenciamento da Segurança Operacional", "Sistema de Garantia da Segurança Operacional"], correct: 2, explanation: "SGSO = Sistema de Gerenciamento da Segurança Operacional." },
-            { text: "O treinamento geral deve ser direcionado a quais profissionais?", options: ["Apenas motoristas", "Apenas bombeiros", "Todos que atuam ou influenciam na área operacional", "Apenas gestores"], correct: 2, explanation: "Direcionado a todos que atuam ou influenciam na área operacional." },
-            { text: "Quais os três elementos que compõem uma competência?", options: ["Teoria, prática e avaliação", "Conhecimento, habilidade e atitude", "Planejamento, execução e controle", "Estudo, treino e certificação"], correct: 1, explanation: "Competência = conhecimento + habilidade + atitude." },
-            { text: "Qual treinamento é obrigatório para condução de veículos na área de manobras em baixa visibilidade?", options: ["Treinamento Geral", "Treinamento para Condução de Veículos", "Treinamento para Operações em Baixa Visibilidade", "Treinamento Básico para Operações"], correct: 2, explanation: "O Treinamento para Operações em Baixa Visibilidade é específico para esta condição." },
-            { text: "O que significa PTR-BA?", options: ["Programa de Treinamento Recorrente para Bombeiros de Aeródromo", "Plano de Treinamento Regular de Bombeiros", "Programa Técnico de Resgate de Bombeiros", "Plano de Treinamento Recorrente de Bombeiros"], correct: 0, explanation: "PTR-BA mantém a proficiência dos bombeiros de aeródromo." },
-            { text: "Qual a carga horária mensal para treinamento recorrente de bombeiros?", options: ["8 horas", "12 horas", "16 horas", "20 horas"], correct: 2, explanation: "A IS nº 153.37-001 exige 16 horas mensais." },
-            { text: "O que fazer quando profissional fica 3 a 12 meses sem atuar?", options: ["Nada", "Treinamento de atualização", "Novo treinamento inicial", "Reciclagem online"], correct: 1, explanation: "Para afastamento entre 3 e 12 meses, recomenda-se treinamento de atualização." },
-            { text: "Qual NÃO é um treinamento obrigatório do PISOA?", options: ["Gerenciamento de Risco de Fauna", "Operações em Baixa Visibilidade", "Inglês Técnico", "Reporte de Condição de Pista"], correct: 2, explanation: "Inglês Técnico não está entre os 9 treinamentos obrigatórios." },
-
-            // ===== COMPETÊNCIAS E AVALIAÇÃO =====
-            { text: "O que significa FOD?", options: ["Falha Operacional Detectada", "Foreign Object Debris (Objeto Estranho)", "Fator de Risco Operacional", "Frequência de Operações Diárias"], correct: 1, explanation: "FOD são objetos estranhos que podem causar danos às aeronaves." },
-            { text: "Qual a idade máxima para parâmetros padrão de avaliação física de bombeiros?", options: ["35 anos", "40 anos", "45 anos", "50 anos"], correct: 1, explanation: "Os parâmetros são para profissionais com até 40 anos." },
-            { text: "O treinamento básico de segurança operacional deve focar em quê?", options: ["Princípios gerais de segurança", "Especificidades do SGSO do aeródromo", "Histórico da aviação civil", "Emergências genéricas"], correct: 1, explanation: "Deve focar nas especificidades do SGSO do aeródromo." },
-            { text: "Quantos responsáveis operacionais na Seção 153.15?", options: ["3", "4", "5", "6"], correct: 2, explanation: "São 5: gestor, GSO, operações, manutenção e resposta à emergência." },
-            { text: "O que significa ADDIE?", options: ["Analisar, Definir, Desenvolver, Implementar, Executar", "Analisar, Projetar, Desenvolver, Implementar, Avaliar", "Avaliar, Diagnosticar, Desenhar, Inovar, Executar", "Analisar, Dirigir, Demonstrar, Inspecionar, Educar"], correct: 1, explanation: "ADDIE é metodologia de treinamento baseado em competências." },
-            { text: "Qual distância mínima na corrida de 12 minutos para bombeiros?", options: ["2.000m", "2.200m", "2.400m", "2.600m"], correct: 2, explanation: "A distância mínima é 2.400 metros." },
-            { text: "O treinamento para acesso à área de manobras aborda principalmente:", options: ["Procedimentos administrativos", "Prevenção de incursão em pista e hot spots", "Manutenção de aeronaves", "Operações de terminal"], correct: 1, explanation: "Foco em prevenção de incursão em pista e áreas de risco (hot spots)." },
-            { text: "O que significa RWYCC?", options: ["Runway Condition Code", "Runway Control Center", "Runway Cross Check", "Runway Communication Code"], correct: 0, explanation: "Código gerado após avaliação da condição da pista." },
-            { text: "Qual o mínimo de flexões no solo para bombeiros?", options: ["15", "20", "25", "30"], correct: 1, explanation: "Mínimo de 20 repetições." },
-            { text: "O que são 'hot spots'?", options: ["Locais com Wi-Fi", "Áreas de risco no aeródromo", "Pontos de encontro", "Locais de maior movimento"], correct: 1, explanation: "Áreas de risco para prevenção de incursão em pista." },
-            { text: "Qual o mínimo de abdominais para bombeiros?", options: ["30", "34", "38", "42"], correct: 2, explanation: "Mínimo de 38 repetições abdominais." },
-
-            // ===== BOMBEIROS PTR-BA =====
-            { text: "Pré-requisitos para acessar área de manobras com veículo:", options: ["Apenas geral", "Condução de veículos + Acesso área manobras", "Apenas básico", "Baixa visibilidade"], correct: 1, explanation: "Primeiro condução de veículos, depois acesso à área de manobras." },
-            { text: "Prazo máximo entre verificações de competência?", options: ["12 meses", "18 meses", "24 meses", "30 meses"], correct: 2, explanation: "Intervalo máximo de 24 meses entre verificações." },
-            { text: "Qual a função do BA-CE no SESCINC?", options: ["Bombeiro Chefe de Equipe", "Bombeiro Motorista", "Bombeiro Resgatista", "Bombeiro Líder de Resgate"], correct: 0, explanation: "BA-CE = Chefe de Equipe de Serviço." },
-            { text: "Com que frequência devem ser realizadas atividades planejadas do PTR-BA?", options: ["A cada 3 meses", "A cada 6 meses", "A cada 12 meses", "A cada 24 meses"], correct: 1, explanation: "Pelo menos uma vez a cada 6 meses." },
-            { text: "Qual o mínimo de repetições na barra fixa para bombeiros?", options: ["1", "3", "5", "7"], correct: 1, explanation: "Mínimo de 3 repetições na barra fixa." },
-            { text: "O que significa PCINC?", options: ["Plano de Combate a Incêndio", "Plano Contraincêndio em Aeródromo", "Programa de Controle de Incêndio", "Plano de Coordenação de Incêndio"], correct: 1, explanation: "Plano Contraincêndio em Aeródromo." },
-            { text: "O que significa PLEM?", options: ["Plano de Emergência", "Plano de Logística de Emergência", "Plano de Emergência em Aeródromo", "Programa de Logística e Emergência"], correct: 2, explanation: "Plano de Emergência em Aeródromo." },
-            { text: "Para aeródromos controlados, quem é responsável pela área de manobras?", options: ["Operador do aeródromo", "Serviço de Tráfego Aéreo (ATS)", "Polícia Federal", "Infraero"], correct: 1, explanation: "O órgão ATS controla a área de manobras." },
-            { text: "O que é OJT?", options: ["Oficina de Job Training", "On Job Training (treinamento em serviço)", "Operação Joint Training", "Organização de Jovens Talentos"], correct: 1, explanation: "OJT = Treinamento no local de trabalho." },
-            { text: "Qual documento define o conteúdo mínimo do PISOA?", options: ["RBAC 139", "IS 153.37-001", "RBAC 121", "IS 153.133-001"], correct: 1, explanation: "A IS 153.37-001 detalha o conteúdo programático mínimo." },
-
-            // ===== SEGURANÇA E PREVENÇÃO =====
-            { text: "O que deve ser feito após acidente com falha de treinamento identificada?", options: ["Ignorar", "Apenas documentar", "Revisão do PISOA", "Demitir o envolvido"], correct: 2, explanation: "Deve-se revisar o PISOA e realizar treinamento de atualização." },
-            { text: "O que significa RCR?", options: ["Runway Condition Report", "Runway Control Report", "Runway Cross Report", "Runway Communication Report"], correct: 0, explanation: "Reporte de Condição de Pista." },
-            { text: "Qual a finalidade da avaliação de reação?", options: ["Avaliar aprendizagem", "Avaliar instrutor e instalações", "Avaliar mudança de comportamento", "Avaliar ROI"], correct: 1, explanation: "Avalia satisfação com instrutor, instalações e material." },
-            { text: "O que é cultura justa no SGSO?", options: ["Não punir erros", "Balanço entre responsabilidade e aprendizado", "Punir todos os erros", "Ignorar falhas"], correct: 1, explanation: "Equilíbrio entre responsabilização e aprendizado com erros." },
-            { text: "Para aeródromos não controlados, quem coordena a área de manobras?", options: ["Torre de controle", "Frequência de Coordenação entre Aeronaves (FCA)", "Operador do aeródromo", "ANAC"], correct: 1, explanation: "A FCA é usada em aeródromos não controlados." },
-            { text: "O que significa SOCMS?", options: ["Sistema de Orientação e Controle da Movimentação em Solo", "Sistema Operacional de Controle de Movimento", "Serviço de Orientação de Controle", "Sistema de Operações e Controle"], correct: 0, explanation: "Sistema para operações em baixa visibilidade." },
-            { text: "O que são fatores humanos no contexto do PISOA?", options: ["Recursos humanos", "Aspectos psicológicos e comportamentais", "Salários e benefícios", "Escala de trabalho"], correct: 1, explanation: "Fatores humanos afetam o desempenho e a segurança." },
-            { text: "Qual a documentação mínima para treinamentos PTR-BA?", options: ["Apenas lista", "Data, tema, instrutor, lista", "Apenas certificado", "Apenas avaliação"], correct: 1, explanation: "Registros devem conter data, tema, instrutor e lista de presença." },
-            { text: "O que significa AVSEC?", options: ["Aviation Security", "Avaliação de Segurança", "Aviação e Segurança", "Audiência de Segurança"], correct: 0, explanation: "Segurança da aviação contra atos ilícitos." },
-
-            // ===== OPERAÇÕES E MANUTENÇÃO =====
-            { text: "O treinamento básico para operações é obrigatório para:", options: ["Todos motoristas", "Supervisão em pátio e monitoramento de condições", "Apenas bombeiros", "Apenas gestores"], correct: 1, explanation: "Para supervisão em pátio e monitoramento de pista." },
-            { text: "Qual a validade da credencial para acesso à área de manobras?", options: ["5 anos", "Indeterminada", "Vinculada ao treinamento recorrente", "10 anos"], correct: 2, explanation: "Vinculada à aprovação no treinamento." },
-            { text: "O que é avaliação de transferência em profundidade?", options: ["Satisfação", "Quanto o aluno aprendeu", "Transferência dos conhecimentos para prática", "ROI do treinamento"], correct: 2, explanation: "Avalia transferência dos conhecimentos para a prática." },
-            { text: "O que significa BA-RE?", options: ["Bombeiro Resgatista", "Bombeiro Recorrente", "Bombeiro Regional", "Bombeiro de Resgate"], correct: 0, explanation: "Bombeiro de Aeródromo Resgatista." },
-            { text: "Qual a periodicidade da avaliação física dos bombeiros?", options: ["Mensal", "Trimestral", "Anual", "Bienal"], correct: 2, explanation: "Avaliação periódica anual." },
-            { text: "O treinamento para gerenciamento de fauna deve ser coordenado por quem?", options: ["ANAC", "Responsável pelo risco de fauna", "Bombeiros", "Polícia"], correct: 1, explanation: "Coordenado pelo responsável do gerenciamento de fauna." },
-            { text: "O que significa RTF?", options: ["Rádio Telefonia", "Radiotelefonia", "Rádio Técnica de Frequência", "Rádio de Tráfego"], correct: 1, explanation: "Frequência de radiotelefonia para comunicação." },
-            { text: "Qual o principal risco da fauna para aeronaves?", options: ["Barulho", "Colisão com aeronaves", "Poluição", "Atrasos"], correct: 1, explanation: "Colisão com animais pode causar acidentes graves." },
-            { text: "O que significa NGAP?", options: ["Next Generation of Aviation Professionals", "New General Aviation Program", "National Group of Aviation Professionals", "Next General Aviation Plan"], correct: 0, explanation: "Programa OACI para nova geração de profissionais." },
-            { text: "Qual a função do responsável pela manutenção aeroportuária?", options: ["Operar veículos", "Coordenar manutenção de infraestrutura crítica", "Treinar bombeiros", "Emitir credenciais"], correct: 1, explanation: "Manutenção de pista, iluminação, drenagem, etc." },
-            { text: "O que são avaliações formativas?", options: ["Avaliação final", "Avaliação ao longo do curso para corrigir falhas", "Avaliação do instrutor", "Avaliação da infraestrutura"], correct: 1, explanation: "Avaliações intermediárias para ajustar o aprendizado." },
-            { text: "Como deve ser a comunicação com o ATS na área de manobras?", options: ["Livre", "Com fraseologia padronizada", "Apenas escrita", "Não há comunicação"], correct: 1, explanation: "Fraseologia padronizada é obrigatória." },
-            { text: "O que significa BA-LR?", options: ["Bombeiro Líder de Resgate", "Bombeiro de Resgate", "Bombeiro Regional", "Bombeiro de Logística"], correct: 0, explanation: "Bombeiro Líder de Equipe de Resgate." },
-            { text: "Qual o conteúdo do treinamento de atualização?", options: ["Todo conteúdo inicial", "Foco em mudanças e lacunas identificadas", "Apenas teórico", "Apenas prático"], correct: 1, explanation: "Aborda mudanças e pontos falhos específicos." },
-
-            // ===== LEGISLAÇÃO =====
-            { text: "O que significa RBAC?", options: ["Regulamento Brasileiro de Aviação Civil", "Registro Brasileiro de Aeronaves Civis", "Regulamento de Base da Aviação Civil", "Registro Básico de Aviação Civil"], correct: 0, explanation: "Regulamento Brasileiro de Aviação Civil da ANAC." },
-            { text: "Qual o nível de inglês sugerido para gestor de aeródromo classe IV?", options: ["Básico", "Intermediário", "Avançado", "Fluente"], correct: 2, explanation: "Inglês nível avançado para classe IV." },
-            { text: "O que é a avaliação de valor final?", options: ["Avaliação do curso", "Contribuição para segurança operacional", "Avaliação do instrutor", "Avaliação da infraestrutura"], correct: 1, explanation: "Infere quanto o treinamento contribuiu para a segurança." },
-            { text: "Como deve ser o credenciamento no aeródromo?", options: ["Descrito no PISOA ou referência a outro documento", "Verbal", "Apenas para bombeiros", "Apenas para motoristas"], correct: 0, explanation: "Procedimento deve estar documentado." },
-            { text: "O que significa FCA?", options: ["Frequência de Coordenação entre Aeronaves", "Frequência de Controle de Aeronaves", "Frequência Comum de Aeródromo", "Frequência de Comunicação Aérea"], correct: 0, explanation: "Usada em aeródromos não controlados." },
-            { text: "Qual a experiência mínima para gestor de aeródromo classe IV?", options: ["1 ano", "3 anos", "5 anos", "10 anos"], correct: 2, explanation: "5 anos de experiência." },
-            { text: "O que deve ser feito com profissional não aprovado na avaliação?", options: ["Demitir", "Treinamento complementar e reavaliação", "Ignorar", "Apenas advertir"], correct: 1, explanation: "Ações corretivas e reavaliação devem ser previstas." },
-            { text: "O que significa CCI?", options: ["Caminhão de Combate a Incêndio", "Centro de Controle de Incêndio", "Comando de Combate Imediato", "Centro de Coordenação Integrada"], correct: 0, explanation: "Veículo de combate a incêndio do SESCINC." }
+            { text: "Quantos treinamentos obrigatórios são listados na Seção 153.37 do RBAC nº 153?", options: ["5", "7", "9", "11"], correct: 2, explanation: "A Seção 153.37 lista 9 treinamentos obrigatórios." },
+            { text: "Qual o objetivo principal do PISOA?", options: ["Cumprir exigência regulatória", "Estabelecer treinamentos para garantir segurança operacional", "Substituir o SGSO", "Treinar apenas bombeiros"], correct: 1, explanation: "O PISOA estabelece treinamentos para segurança operacional." },
+            { text: "Por quantos anos o operador deve manter a documentação do PISOA?", options: ["2 anos", "3 anos", "5 anos", "10 anos"], correct: 2, explanation: "A documentação deve ser mantida por pelo menos 5 anos." },
+            { text: "Qual o prazo máximo recomendado para treinamentos recorrentes?", options: ["12 meses", "18 meses", "24 meses", "36 meses"], correct: 2, explanation: "Recomenda-se intervalo máximo de 24 meses." },
+            { text: "O que significa SGSO?", options: ["Sistema de Gestão de Segurança Operacional", "Sistema Geral de Segurança Operacional", "Sistema de Gerenciamento da Segurança Operacional", "Sistema de Garantia da Segurança Operacional"], correct: 2, explanation: "SGSO = Sistema de Gerenciamento da Segurança Operacional." }
         ];
 
-        // Variáveis
         let currentQuestions = [];
         let currentIndex = 0;
         let userAnswers = [];
@@ -468,12 +307,10 @@
         let quizTimerInterval = null;
         let answerLocked = false;
 
-        // Temas
         function toggleTheme() {
             document.body.classList.toggle('dark');
         }
 
-        // Navegação
         function showHome() {
             document.getElementById('homeScreen').style.display = 'flex';
             document.getElementById('quizScreen').style.display = 'none';
@@ -485,23 +322,11 @@
         function showSubjects() {
             document.getElementById('homeScreen').style.display = 'none';
             document.getElementById('subjectsScreen').style.display = 'block';
-            renderSubjects();
-        }
-
-        function renderSubjects() {
-            const subjects = [
-                { name: "📋 Treinamentos Obrigatórios", filter: (q, i) => i < 12 },
-                { name: "📊 Competências e Avaliação", filter: (q, i) => i >= 12 && i < 24 },
-                { name: "👨‍🚒 Bombeiros (PTR-BA)", filter: (q, i) => i >= 24 && i < 34 },
-                { name: "🛡️ Segurança e Prevenção", filter: (q, i) => i >= 34 && i < 43 },
-                { name: "⚙️ Operações e Manutenção", filter: (q, i) => i >= 43 && i < 56 },
-                { name: "⚖️ Legislação", filter: (q, i) => i >= 56 },
-                { name: "🎲 Todas as questões", filter: () => true }
-            ];
-            
             const container = document.getElementById('subjectsList');
             container.innerHTML = '';
-            
+            const subjects = [
+                { name: "📋 Todas as questões", filter: () => true }
+            ];
             subjects.forEach(sub => {
                 const btn = document.createElement('button');
                 btn.className = 'subject-btn';
@@ -512,9 +337,8 @@
         }
 
         function startQuizBySubject(filter) {
-            const filtered = questions.filter((q, i) => filter(q, i));
-            if (filtered.length === 0) return;
-            const quizSize = Math.min(40, Math.max(25, filtered.length));
+            const filtered = questions.filter(filter);
+            const quizSize = Math.min(40, filtered.length);
             currentQuestions = shuffleArray([...filtered]).slice(0, quizSize);
             initializeQuiz();
         }
@@ -530,8 +354,122 @@
             userAnswers = [];
             answerLocked = false;
             quizStartTime = Date.now();
-            
             if (quizTimerInterval) clearInterval(quizTimerInterval);
             quizTimerInterval = setInterval(updateTimer, 1000);
-            
-            document.getElementById('homeScreen').style.display
+            document.getElementById('homeScreen').style.display = 'none';
+            document.getElementById('quizScreen').style.display = 'block';
+            renderQuestion();
+        }
+
+        function updateTimer() {
+            if (!quizStartTime) return;
+            const elapsed = Math.floor((Date.now() - quizStartTime) / 1000);
+            const minutes = Math.floor(elapsed / 60);
+            const seconds = elapsed % 60;
+            document.getElementById('quizTimer').textContent = `${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+        }
+
+        function renderQuestion() {
+            const q = currentQuestions[currentIndex];
+            document.getElementById('quizProgress').textContent = `Questão ${currentIndex + 1}/${currentQuestions.length}`;
+            document.getElementById('questionText').textContent = q.text;
+            const container = document.getElementById('optionsContainer');
+            container.innerHTML = '';
+            q.options.forEach((opt, idx) => {
+                const div = document.createElement('div');
+                div.className = 'option';
+                div.textContent = `${String.fromCharCode(65+idx)}. ${opt}`;
+                div.onclick = () => selectOption(idx);
+                container.appendChild(div);
+            });
+            document.getElementById('feedbackContainer').style.display = 'none';
+            document.getElementById('nextBtn').style.display = 'none';
+            document.getElementById('finishBtn').style.display = 'none';
+            answerLocked = false;
+        }
+
+        function selectOption(optionIndex) {
+            if (answerLocked) return;
+            const q = currentQuestions[currentIndex];
+            const isCorrect = (optionIndex === q.correct);
+            userAnswers[currentIndex] = {
+                selected: optionIndex,
+                correct: isCorrect,
+                question: q
+            };
+            answerLocked = true;
+            const options = document.querySelectorAll('.option');
+            options.forEach((opt, idx) => {
+                if (idx === q.correct) opt.classList.add('correct');
+                if (idx === optionIndex && !isCorrect) opt.classList.add('wrong');
+                opt.style.pointerEvents = 'none';
+            });
+            const feedbackDiv = document.getElementById('feedbackContainer');
+            const correctText = isCorrect ? '✅ Resposta correta!' : '❌ Resposta incorreta';
+            feedbackDiv.innerHTML = `<div class="feedback-correct">${correctText}</div><div class="feedback-explanation">📘 Explicação: ${q.explanation}</div>`;
+            feedbackDiv.style.display = 'block';
+            if (currentIndex + 1 === currentQuestions.length) {
+                document.getElementById('finishBtn').style.display = 'block';
+            } else {
+                document.getElementById('nextBtn').style.display = 'block';
+            }
+        }
+
+        function nextQuestion() {
+            currentIndex++;
+            renderQuestion();
+        }
+
+        function finishQuiz() {
+            if (quizTimerInterval) clearInterval(quizTimerInterval);
+            const totalQuestions = currentQuestions.length;
+            const correctCount = userAnswers.filter(a => a && a.correct).length;
+            const percentage = Math.round((correctCount / totalQuestions) * 100);
+            const elapsed = Math.floor((Date.now() - quizStartTime) / 1000);
+            const minutes = Math.floor(elapsed / 60);
+            const seconds = elapsed % 60;
+            document.getElementById('finalScore').textContent = `${correctCount}/${totalQuestions}`;
+            document.getElementById('finalPercent').textContent = `${percentage}%`;
+            document.getElementById('finalTime').textContent = `${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+            document.getElementById('quizScreen').style.display = 'none';
+            document.getElementById('resultScreen').style.display = 'block';
+            saveResult(correctCount, totalQuestions, percentage, `${minutes}:${seconds}`);
+        }
+
+        function saveResult(score, total, percent, time) {
+            const history = getResultsHistory();
+            history.unshift({ date: new Date().toLocaleString(), score, total, percent, time });
+            while (history.length > 20) history.pop();
+            localStorage.setItem('piso_quiz_history', JSON.stringify(history));
+        }
+
+        function getResultsHistory() {
+            const stored = localStorage.getItem('piso_quiz_history');
+            return stored ? JSON.parse(stored) : [];
+        }
+
+        function showResultsHistory() {
+            const history = getResultsHistory();
+            if (history.length === 0) {
+                alert("Nenhum resultado salvo ainda. Faça um quiz primeiro!");
+                return;
+            }
+            let msg = "📊 SEUS ÚLTIMOS RESULTADOS:\n\n";
+            history.forEach((r, i) => {
+                msg += `${i+1}. ${r.date}\n   ${r.score}/${r.total} (${r.percent}%) - ⏱️ ${r.time}\n\n`;
+            });
+            alert(msg);
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        showHome();
+    </script>
+</body>
+</html>
